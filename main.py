@@ -41,5 +41,5 @@ print("Heusinkveld stock checker has started.")
 
 
 scheduler = BlockingScheduler()
-scheduler.add_job(check_handbrake_stock, 'interval', minutes=1)
+scheduler.add_job(check_handbrake_stock, 'interval', minutes=30)
 scheduler.start()
