@@ -23,13 +23,12 @@ def check_handbrake_stock():
 
     if product_info is not None:
         print("Handbrake detected as in stock, preparing to send e-mail to {}.".format(receiver_email))
-        context = ssl.create_default_context()
         body_text = "Handbrake has been detected as being restocked.\nhttps://heusinkveld.com/products/shifters-handbrakes/sim-handbrake-2/?q=%2Fproducts%2Fshifters-handbrakes%2Fsim-handbrake-2%2F"
         message = MIMEText(body_text)
         message['subject'] = "Heusinkveld Handbrake Restock"
         message['from'] = sender_email
         message['to'] = receiver_email
-        with smtplib.SMTP('smtp.gmail.com', port) as server:
+        with smtplib.SMTP_SSL('smtp.gmail.com', port) as server:
             server.login(sender_email, password)
             server.sendmail(sender_email, receiver_email, message.as_string())
         print("E-mail sent.")
