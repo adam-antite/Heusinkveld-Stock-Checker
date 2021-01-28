@@ -1,2 +1,2 @@
 # Heusinkveld Stock Checker
- Simple Python scraper to check inventory
+ Simple scraper written in Python using Beautiful Soup and AdvancedPythonScheduler that checks if the Heusinkveld handbrake is in stock.

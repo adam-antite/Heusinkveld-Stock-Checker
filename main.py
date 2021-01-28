@@ -29,7 +29,7 @@ def check_handbrake_stock():
         message['subject'] = "Heusinkveld Handbrake Restock"
         message['from'] = sender_email
         message['to'] = receiver_email
-        with smtplib.SMTP('smtp.gmail.com', port, context=context) as server:
+        with smtplib.SMTP('smtp.gmail.com', port) as server:
             server.login(sender_email, password)
             server.sendmail(sender_email, receiver_email, message.as_string())
         print("E-mail sent.")
